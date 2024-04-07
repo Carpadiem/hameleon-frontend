@@ -106,3 +106,13 @@ p.subtitle {
     display: flex;
     justify-content: flex-start;
 }
+
+.additional_container {
+    margin-top: 10px;
+}
+p.additional_text {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 500;
+    color: #a6a6a6;
+}

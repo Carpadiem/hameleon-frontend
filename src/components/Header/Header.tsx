@@ -20,7 +20,7 @@ const Header = () => {
           <div className={styles.points_container}>
             <Point text='Главная' to='/' />
             <Point text='Каталог' to='/catalog' />
-            <Point text='Контакты' to='/contact' />
+            <Point text='Контакты' to='/contacts' />
           </div>
           <div className={styles.buttons_container}>
             <div className={styles.btn_cart}>

@@ -46,6 +46,9 @@ const Flower = () => {
               <div className={styles.buttons_container}>
                 <ActionButton text='Добавить в корзину' action={() => {}} />
               </div>
+              <div className={styles.additional_container}>
+                <p className={styles.additional_text}>Артикул: 755{id}</p>
+              </div>
             </div>
           </div>
         </div>
