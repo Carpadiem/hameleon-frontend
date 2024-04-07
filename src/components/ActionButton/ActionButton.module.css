@@ -1,0 +1,9 @@
+.btn {
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
