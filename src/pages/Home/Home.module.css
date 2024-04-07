@@ -100,6 +100,11 @@ p.welcome_subtitle {
     height: 400px;
     border-radius: 8px;
     overflow: hidden;
+    transition: .3s ease;
+}
+.plant_preview:hover {
+    transform: scale(1.01);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .15));
 }
 img.plant_preview_image {
     width: 100%;

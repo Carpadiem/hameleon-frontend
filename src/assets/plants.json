@@ -1,0 +1,71 @@
+[
+    {
+      "id":1,
+      "name":"Летний чабер",
+      "price":386,
+      "discount":10,
+      "imagePubPath":"/images/plants/plant_1.jpg",
+      "categories":[
+        "all",
+        "cactus"
+      ]
+    },
+    {
+      "id":2,
+      "name":"Величественный кактус",
+      "price":400,
+      "discount":10,
+      "imagePubPath":"/images/plants/plant_2.jpg",
+      "categories":[
+        "all",
+        "cactus"
+      ]
+    },
+    {
+      "id":3,
+      "name":"Дикий кактус",
+      "price":165,
+      "discount":10,
+      "imagePubPath":"/images/plants/plant_3.jpg",
+      "categories":[
+        "all",
+        "cactus"
+      ]
+    },
+    {
+      "id":4,
+      "name":"Кустовая лилия",
+      "price":600,
+      "discount":10,
+      "imagePubPath":"/images/plants/plant_4.jpg",
+      "categories":[
+        "all",
+        "exotic",
+        "popular"
+      ]
+    },
+    {
+      "id":5,
+      "name":"Кустовые розы",
+      "price":386,
+      "discount":10,
+      "imagePubPath":"/images/plants/plant_5.jpg",
+      "categories":[
+        "all",
+        "exotic",
+        "popular"
+      ]
+    },
+    {
+      "id":6,
+      "name":"Дикие розы",
+      "price":500,
+      "discount":10,
+      "imagePubPath":"/images/plants/plant_6.jpg",
+      "categories":[
+        "all",
+        "exotic",
+        "popular"
+      ]
+    }
+  ]

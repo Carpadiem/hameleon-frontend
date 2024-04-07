@@ -1,0 +1,47 @@
+.block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.container1200 {
+    width: 1200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabs_container {
+    display: flex;
+    gap: 80px;
+    margin-top: 50px;
+}
+
+.cards_container {
+    margin-top: 70px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+h2.header_text {
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-weight: 700;
+    color: #2E363E;
+}
+
+p.tab_text {
+    font-family: 'Montserrat';
+    font-size: 22px;
+    font-weight: 700;
+    color: #2E363E;
+    cursor: pointer;
+}

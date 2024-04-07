@@ -1,9 +1,11 @@
 import React from 'react'
 import styles from './Home.module.css'
+import { Link } from 'react-router-dom'
+// components
 import { Header } from '@components/Header'
 import { Footer } from '@components/Footer'
 import { LinkButton } from '@components/LinkButton'
-
+// images
 import PNGNut from '/images/nut.png'
 import PNGCart from '/images/cart.png'
 import PNGGift from '/images/gift.png'
@@ -15,12 +17,8 @@ import PNGSlider1 from '/images/slider/slider_1.jpg'
 import PNGSlider2 from '/images/slider/slider_2.jpg'
 import PNGSlider3 from '/images/slider/slider_3.jpg'
 
-import JPGPlant1 from '/images/plants/plant_1.jpg'
-import JPGPlant2 from '/images/plants/plant_2.jpg'
-import JPGPlant3 from '/images/plants/plant_3.jpg'
-import JPGPlant4 from '/images/plants/plant_4.jpg'
-import JPGPlant5 from '/images/plants/plant_5.jpg'
-import JPGPlant6 from '/images/plants/plant_6.jpg'
+// json
+import ShopPlants from '../../assets/plants.json'
 
 const sliderDelay = 3000
 
@@ -28,6 +26,8 @@ const Home = () => {
   const [images, setImages] = React.useState([PNGSlider1, PNGSlider2, PNGSlider3])
   const [imgIndex, setImgIndex] = React.useState(0)
   const ref_timeout = React.useRef<NodeJS.Timeout>(null!)
+
+  const [shopPlants, setShopPlants] = React.useState(ShopPlants)
 
   function resetTimeout() {
     if (ref_timeout.current) clearTimeout(ref_timeout.current)
@@ -67,24 +67,15 @@ const Home = () => {
             </h1>
           </div>
           <div className={styles.plant_previews_container}>
-            <div className={styles.plant_preview}>
-              <img src={JPGPlant1} alt='' className={styles.plant_preview_image} />
-            </div>
-            <div className={styles.plant_preview}>
-              <img src={JPGPlant2} alt='' className={styles.plant_preview_image} />
-            </div>
-            <div className={styles.plant_preview}>
-              <img src={JPGPlant3} alt='' className={styles.plant_preview_image} />
-            </div>
-            <div className={styles.plant_preview}>
-              <img src={JPGPlant4} alt='' className={styles.plant_preview_image} />
-            </div>
-            <div className={styles.plant_preview}>
-              <img src={JPGPlant5} alt='' className={styles.plant_preview_image} />
-            </div>
-            <div className={styles.plant_preview}>
-              <img src={JPGPlant6} alt='' className={styles.plant_preview_image} />
-            </div>
+            {shopPlants.map((plant, index) =>
+              index < 6 ? (
+                <Link to={`/flower/${plant.id}`}>
+                  <div className={styles.plant_preview}>
+                    <img src={plant.imagePubPath} alt='' className={styles.plant_preview_image} />
+                  </div>
+                </Link>
+              ) : null
+            )}
           </div>
           <div className={styles.buttons_container}>
             <LinkButton text='Перейти в каталог' to='/catalog' width={180} height={60} radius={4} bcolor='#426545' />

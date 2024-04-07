@@ -31,7 +31,8 @@
     "paths": {
       "@pages/*": ["./src/pages/*"],
       "@components/*": ["./src/components/*"],
-      "@svg/*": ["./src/assets/svg/*"]
+      "@svg/*": ["./src/assets/svg/*"],
+      "@models/*": ["./src/models/*"]
     },
     "types": ["vite-plugin-svgr/client", "node"]
   },

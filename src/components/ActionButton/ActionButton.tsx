@@ -12,6 +12,7 @@ interface ActionButtonProps {
   radius?: number | string
   iconSvg?: React.ReactSVGElement | undefined
   icolor?: string
+  border?: string
 }
 const ActionButton = ({
   text,
@@ -23,11 +24,14 @@ const ActionButton = ({
   radius = 3,
   iconSvg = undefined,
   icolor = 'red',
+  border = 'none',
 }: ActionButtonProps) => {
   //
   const btn_style = {
     backgroundColor: bcolor,
     color: tcolor,
+    textAlign: 'center',
+    border: border,
   } as React.CSSProperties
 
   return (
