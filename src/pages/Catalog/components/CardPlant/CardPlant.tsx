@@ -6,7 +6,11 @@ import { ActionButton } from '@components/ActionButton'
 // models
 import ICatalogPlant from '@models/ICatalogPlant'
 
-const CardPlant = ({ id, name, price, discount, imagePubPath, categories }: ICatalogPlant) => {
+interface CardPlantProps extends ICatalogPlant {
+  toCartClick: () => void
+}
+
+const CardPlant = ({ id, name, price, discount, imagePubPath, categories, toCartClick }: CardPlantProps) => {
   return (
     <>
       <div className={styles.frame}>
@@ -31,7 +35,7 @@ const CardPlant = ({ id, name, price, discount, imagePubPath, categories }: ICat
           <h3 className={styles.name_text}>{name}</h3>
         </div>
         <div className={styles.btn_to_cart_container}>
-          <ActionButton text='В корзину' action={() => {}} bcolor='#f4f4f4' tcolor='#426545' border='1px solid #426545' />
+          <ActionButton text='В корзину' action={toCartClick} bcolor='#f4f4f4' tcolor='#426545' border='1px solid #426545' />
         </div>
       </div>
     </>

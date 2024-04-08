@@ -5,10 +5,18 @@ import logo from '/logo.png'
 // components
 import { Point } from './components/Point'
 import { LinkButton } from '@components/LinkButton'
+import { PopupCart } from '@components/PopupCart'
 // svg
 import SVGCart from '@svg/cart.svg?react'
+// stores, mobx
+import { observer } from 'mobx-react-lite'
+import storeCart from '@stores/storeCart'
 
 const Header = () => {
+  const cartIconClick = () => {
+    storeCart.setIsCartOpened(!storeCart.isCartOpened)
+  }
+
   return (
     <>
       <div className={styles.block_fixed}>
@@ -23,15 +31,16 @@ const Header = () => {
             <Point text='Контакты' to='/contacts' />
           </div>
           <div className={styles.buttons_container}>
-            <div className={styles.btn_cart}>
+            <div className={styles.btn_cart} onClick={cartIconClick}>
               <SVGCart />
             </div>
             <LinkButton text='Войти' to='/signin' bcolor='white' tcolor='black' border='1px solid #dfdfdf' radius={3} />
           </div>
         </div>
       </div>
+      {storeCart.isCartOpened && <PopupCart />}
     </>
   )
 }
 
-export default Header
+export default observer(Header)

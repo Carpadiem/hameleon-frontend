@@ -9,6 +9,8 @@ import { ActionButton } from '@components/ActionButton'
 import ICatalogPlant from '@models/ICatalogPlant'
 // json
 import ShopPlants from '../../assets/plants.json'
+// stores, mobx
+import storeCart from '@stores/storeCart'
 
 const Flower = () => {
   const { id } = useParams()
@@ -18,6 +20,10 @@ const Flower = () => {
     const selected_plant = ShopPlants.filter((plant) => plant.id === Number(id))[0]
     setPlantInfo(selected_plant)
   }, [])
+
+  const addToCartClick = () => {
+    storeCart.add(plantInfo)
+  }
 
   return (
     <>
@@ -44,7 +50,7 @@ const Flower = () => {
                 сувениров.
               </p>
               <div className={styles.buttons_container}>
-                <ActionButton text='Добавить в корзину' action={() => {}} />
+                <ActionButton text='Добавить в корзину' action={addToCartClick} />
               </div>
               <div className={styles.additional_container}>
                 <p className={styles.additional_text}>Артикул: 755{id}</p>

@@ -8,16 +8,20 @@ import { CardPlant } from './components/CardPlant'
 import ICatalogPlant from '@models/ICatalogPlant'
 // json
 import ShopPlants from '../../assets/plants.json'
+// stores, mobx
+import storeCart from '@stores/storeCart'
 
 const Catalog = () => {
   const [plants, setPlants] = React.useState<ICatalogPlant[]>(ShopPlants)
-
   const [categoryBytab, setCategoryByTab] = React.useState('all')
+
+  const addToCartClick = (plant: ICatalogPlant) => {
+    storeCart.add(plant)
+  }
 
   return (
     <>
       <Header />
-
       <div className={styles.block} style={{ padding: '120px 0 120px 0' }}>
         <div className={styles.container1200}>
           <div className={styles.header_container}>
@@ -56,6 +60,7 @@ const Catalog = () => {
                   discount={plant.discount}
                   imagePubPath={plant.imagePubPath}
                   categories={plant.categories}
+                  toCartClick={() => addToCartClick(plant)}
                 />
               ) : (
                 <></>

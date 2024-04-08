@@ -1,0 +1,130 @@
+.block {
+    background-color: rgba(0,0,0, .1);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 998
+}
+
+.container1200 {
+    width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup_frame {
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+
+.title_container {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+
+h2.title {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 600;
+    color: #5A5A5A;
+}
+
+.btn_close {
+    font-size: 20px;
+    color: #5A5A5A;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.btn_close:hover {
+    color: black;
+}
+
+.items_container {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.totals_container {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.total_text {
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 600;
+    color: #364364;
+}
+
+.empty_cart_text {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 500;
+    color: #5A5A5A;
+    width: 100%;
+    text-align: center;
+}
+
+
+.cart_item_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container_left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.container_right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart_item_image {
+    width: 80px;
+    height: auto;
+}
+.cart_item_name {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 600;
+    color: #5A5A5A;
+}
+/* // */
+p.cart_item_price {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 600;
+    color: #5A5A5A;
+}
+.btn_remove_item {
+    font-size: 16px;
+    color: crimson;
+    background-color: #f2f2f2;
+    border: none;
+    padding: 6px 8px;
+    border-radius: 4px;
+    line-height: 100%;
+    cursor: pointer;
+}

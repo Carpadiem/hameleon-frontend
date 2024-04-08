@@ -32,7 +32,8 @@
       "@pages/*": ["./src/pages/*"],
       "@components/*": ["./src/components/*"],
       "@svg/*": ["./src/assets/svg/*"],
-      "@models/*": ["./src/models/*"]
+      "@models/*": ["./src/models/*"],
+      "@stores/*": ["./src/stores/*"]
     },
     "types": ["vite-plugin-svgr/client", "node"]
   },
