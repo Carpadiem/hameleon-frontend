@@ -34,6 +34,10 @@ const LinkButton = ({
     borderRadius: radius,
     width: width,
     height: height,
+
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   } as React.CSSProperties
 
   return (

@@ -24,13 +24,13 @@ const Footer = () => {
           <div className={styles.links_column}>
             <h2 className={styles.links_column_header}>Популярное</h2>
             <div className={styles.links_column_links_container}>
-              <Link className={styles.links_column_link} to='/contacts'>
-                Величественный кактус
-              </Link>
-              <Link className={styles.links_column_link} to='/contacts'>
+              <Link className={styles.links_column_link} to='/flower/1'>
                 Летний чабер
               </Link>
-              <Link className={styles.links_column_link} to='/contacts'>
+              <Link className={styles.links_column_link} to='/flower/2'>
+                Величественный кактус
+              </Link>
+              <Link className={styles.links_column_link} to='/flower/3'>
                 Дикий кактус
               </Link>
             </div>
@@ -38,13 +38,13 @@ const Footer = () => {
           <div className={styles.links_column}>
             <h2 className={styles.links_column_header}>Источники</h2>
             <div className={styles.links_column_links_container}>
-              <Link className={styles.links_column_link} to='/contacts'>
+              <Link className={styles.links_column_link} to='/guarantee'>
                 Гарантия на товар
               </Link>
-              <Link className={styles.links_column_link} to='/contacts'>
+              <Link className={styles.links_column_link} to='/payment_and_delivery'>
                 Доставка и оплата
               </Link>
-              <Link className={styles.links_column_link} to='/contacts'>
+              <Link className={styles.links_column_link} to='/login'>
                 Вход
               </Link>
             </div>

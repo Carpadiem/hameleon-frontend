@@ -32,6 +32,11 @@ const ActionButton = ({
     color: tcolor,
     textAlign: 'center',
     border: border,
+    height: height,
+
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   } as React.CSSProperties
 
   return (

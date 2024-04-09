@@ -19,7 +19,7 @@ const Flower = () => {
   React.useEffect(() => {
     const selected_plant = ShopPlants.filter((plant) => plant.id === Number(id))[0]
     setPlantInfo(selected_plant)
-  }, [])
+  })
 
   const addToCartClick = () => {
     storeCart.add(plantInfo)
