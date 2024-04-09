@@ -6,8 +6,25 @@ import { Footer } from '@components/Footer'
 import { ActionButton } from '@components/ActionButton'
 // svg
 import SVGMarker from '@svg/marker.svg?react'
+import axios from 'axios'
+import { url } from 'inspector'
 
 const Contacts = () => {
+  const ref_fd_user_telegram = React.useRef<HTMLInputElement>(null!)
+
+  const telegramSendClick = async () => {
+    const token = '7148220551:AAGlO7q9o93x7pbHY4nTQqc6X4ymBWyeYbg'
+    const method = 'sendMessage'
+    const user_telegram = ref_fd_user_telegram.current.value
+
+    if (user_telegram !== '') {
+      const message_form = `Пользователь оставил на сайте свой телеграм: ${user_telegram}`
+      const response = await axios.post(`https://api.telegram.org/bot${token}/${method}`, { chat_id: 610837220, text: message_form })
+    } else {
+      alert('Заполните поле "Ваш телеграм для связи"')
+    }
+  }
+
   return (
     <>
       <Header />
@@ -38,9 +55,9 @@ const Contacts = () => {
             <p className={styles.right_description}>
               Если остались вопросы, укажите ваш телеграм для связи. Мы свяжемся в течении 30 минут, чтобы уточнить ваш заказ.
             </p>
-            <input type='text' placeholder='Ваш Telegram для связи' className={styles.fd_telegram} />
+            <input type='text' ref={ref_fd_user_telegram} placeholder='Ваш Telegram для связи' className={styles.fd_telegram} />
             <div className={styles.buttons_container}>
-              <ActionButton text='Отправить' action={() => {}} />
+              <ActionButton text='Отправить' action={telegramSendClick} />
             </div>
           </div>
         </div>

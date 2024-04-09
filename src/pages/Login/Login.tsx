@@ -6,6 +6,8 @@ import { ActionButton } from '@components/ActionButton'
 import { LinkButton } from '@components/LinkButton'
 
 const Login = () => {
+  const loginClick = () => {}
+
   return (
     <>
       <Header />
@@ -18,7 +20,7 @@ const Login = () => {
             <div className={styles.items_container}>
               <input type='text' placeholder='(+7) Номер телефона' name='phone_number' className={styles.fd} />
               <input type='text' placeholder='Пароль' name='password' className={styles.fd} />
-              <ActionButton text='Войти' height={45} action={() => {}} />
+              <ActionButton text='Войти' height={45} action={loginClick} />
               <LinkButton text='Нет аккаунта? Регистрация' height={45} bcolor='transparent' tcolor='rgb(48, 108, 237)' to='/registration' />
             </div>
           </div>
