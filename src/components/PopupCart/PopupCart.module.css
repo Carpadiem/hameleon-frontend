@@ -128,3 +128,7 @@ p.cart_item_price {
     line-height: 100%;
     cursor: pointer;
 }
+
+.buttons_container {
+    padding: 20px;
+}

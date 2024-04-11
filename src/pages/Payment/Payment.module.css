@@ -1,0 +1,93 @@
+.block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.container1200 {
+    width: 1200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title_container {
+    width: 100%;
+}
+
+h1.title_text {
+    font-family: 'Montserrat';
+    font-size: 32px;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+}
+
+.address_container {
+    margin-top: 50px;
+}
+
+p.address_text {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+p.address_text span {
+    font-weight: 600;
+}
+
+.variants_container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 200px;
+}
+
+.variant {
+    width: 100%;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    cursor: pointer;
+
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.variant_name {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+.radio_selected_container {
+    width: 20px;
+    height: 20px;
+    background-color: #d1d1d1;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected {
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.buttons_container {
+    margin-top: 30px;
+    width: 100%;
+}

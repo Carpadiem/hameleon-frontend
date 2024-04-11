@@ -33,6 +33,7 @@ const ActionButton = ({
     textAlign: 'center',
     border: border,
     height: height,
+    width: width,
 
     display: 'flex',
     justifyContent: 'center',

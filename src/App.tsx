@@ -8,6 +8,8 @@ import { Login } from '@pages/Login'
 import { Registration } from '@pages/Registration'
 import { Guarantee } from '@pages/Guarantee'
 import { PaymentAndDelivery } from '@pages/PaymentAndDelivery'
+import { Account } from '@pages/Account'
+import { Payment } from '@pages/Payment'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path='/registration' element={<Registration />} />
         <Route path='/guarantee' element={<Guarantee />} />
         <Route path='/payment_and_delivery' element={<PaymentAndDelivery />} />
+        <Route path='/account' element={<Account />} />
+        <Route path='/payment' element={<Payment />} />
       </Routes>
     </BrowserRouter>
   )
