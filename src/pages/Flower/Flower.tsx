@@ -50,7 +50,9 @@ const Flower = () => {
                 сувениров.
               </p>
               <div className={styles.buttons_container}>
-                <ActionButton text='Добавить в корзину' action={addToCartClick} />
+                <button className={styles.btn_add_to_cart} onClick={addToCartClick}>
+                  Добавить в корзину
+                </button>
               </div>
               <div className={styles.additional_container}>
                 <p className={styles.additional_text}>Артикул: 755{id}</p>

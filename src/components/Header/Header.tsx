@@ -26,10 +26,18 @@ const Header = () => {
     navigate('/account')
   }
 
+  const [cartItemsCount, setCartItemsCount] = React.useState(0)
+  React.useEffect(() => {
+    const cartItemsLen = storeCart.cart.items.length
+    setCartItemsCount(storeCart.cart.items.length)
+  }, [storeCart.cart.items.length])
+
   const [isLogin, setIsLogin] = React.useState(false)
   React.useEffect(() => {
-    const userdata = JSON.parse(window.localStorage.getItem('userdata'))
-    if (userdata) setIsLogin(true)
+    try {
+      const userdata = JSON.parse(window.localStorage.getItem('userdata'))
+      if (userdata) setIsLogin(true)
+    } catch {}
   })
 
   return (
@@ -46,9 +54,18 @@ const Header = () => {
             <Point text='Контакты' to='/contacts' />
           </div>
           <div className={styles.buttons_container}>
-            <div className={styles.btn_cart} onClick={cartIconClick}>
-              <SVGCart />
-            </div>
+            {isLogin && (
+              <div className={styles.btn_cart} onClick={cartIconClick}>
+                <SVGCart />
+                {cartItemsCount > 0 ? (
+                  <div className={styles.cart_items_count}>
+                    <p>{cartItemsCount}</p>
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
+            )}
             {isLogin ? (
               <div className={styles.btn_account} onClick={accountIconClick}>
                 <SVGAccount />

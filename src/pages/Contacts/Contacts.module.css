@@ -45,9 +45,12 @@
     align-items: center;
 }
 .prop_svg {
-    background-color: red;
-    width: 32px;
-    height: 32px;
+    /* background-color: red; */
+    width: auto;
+    height: auto;
+}
+.prop_svg svg {
+    height: auto;
 }
 p.prop_title {
     font-family: 'Montserrat';
@@ -94,4 +97,25 @@ p.right_description {
 .buttons_container {
     display: flex;
     justify-content: flex-start;
+}
+
+
+.btn_send_tg {
+    border: none;
+    background-color: #426545;
+    color: white;
+    width: 120px;
+    border-radius: 4px;
+    height: 50px;
+    cursor: pointer;
+
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: all .2s ease;
+}
+.btn_send_tg:hover {
+    background-color: #426545;
+    color: white;
 }

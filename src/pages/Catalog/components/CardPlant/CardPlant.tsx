@@ -35,7 +35,10 @@ const CardPlant = ({ id, name, price, discount, imagePubPath, categories, toCart
           <h3 className={styles.name_text}>{name}</h3>
         </div>
         <div className={styles.btn_to_cart_container}>
-          <ActionButton text='В корзину' action={toCartClick} bcolor='#f4f4f4' tcolor='#426545' border='1px solid #426545' />
+          <button className={styles.btn_add_to_cart} onClick={toCartClick}>
+            В корзину
+          </button>
+          {/* <ActionButton text='В корзину' action={toCartClick} bcolor='#f4f4f4' tcolor='#426545' border='1px solid #426545' /> */}
         </div>
       </div>
     </>

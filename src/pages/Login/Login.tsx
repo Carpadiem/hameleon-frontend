@@ -52,7 +52,7 @@ const Login = () => {
             </div>
             <div className={styles.items_container}>
               <input ref={ref_fd_number} type='text' placeholder='(+7) Номер телефона' name='phone_number' className={styles.fd} />
-              <input ref={ref_fd_password} type='text' placeholder='Пароль' name='password' className={styles.fd} />
+              <input ref={ref_fd_password} type='password' placeholder='Пароль' name='password' className={styles.fd} />
               <ActionButton text='Войти' height={45} action={loginClick} />
               <LinkButton text='Нет аккаунта? Регистрация' height={45} bcolor='transparent' tcolor='rgb(48, 108, 237)' to='/registration' />
             </div>

@@ -36,7 +36,6 @@ const Home = () => {
   React.useEffect(() => {
     resetTimeout()
     ref_timeout.current = setTimeout(() => setImgIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1)), sliderDelay)
-    console.log(imgIndex)
     return () => {
       resetTimeout()
     }
@@ -69,7 +68,7 @@ const Home = () => {
           <div className={styles.plant_previews_container}>
             {shopPlants.map((plant, index) =>
               index < 6 ? (
-                <Link to={`/flower/${plant.id}`}>
+                <Link to={`/flower/${plant.id}`} key={index}>
                   <div className={styles.plant_preview}>
                     <img src={plant.imagePubPath} alt='' className={styles.plant_preview_image} />
                   </div>

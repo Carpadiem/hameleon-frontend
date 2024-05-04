@@ -18,6 +18,8 @@
 
 .title_container {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 h1.title_text {
@@ -90,4 +92,12 @@ p.address_text span {
 .buttons_container {
     margin-top: 30px;
     width: 100%;
+}
+
+.falseLoggedText {
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    max-width: 500px;
 }

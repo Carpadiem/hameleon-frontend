@@ -116,3 +116,23 @@ p.additional_text {
     font-weight: 500;
     color: #a6a6a6;
 }
+
+
+
+
+.btn_add_to_cart {
+    border: none;
+    background-color: #426545;
+    color: white;
+    width: auto;
+    padding: 0 20px;
+    border-radius: 4px;
+    height: 50px;
+    cursor: pointer;
+
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: all .2s ease;
+}

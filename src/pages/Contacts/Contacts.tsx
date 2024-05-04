@@ -5,7 +5,9 @@ import { Header } from '@components/Header'
 import { Footer } from '@components/Footer'
 import { ActionButton } from '@components/ActionButton'
 // svg
-import SVGMarker from '@svg/marker.svg?react'
+import SVGMark from '@svg/mark.svg?react'
+import SVGPhone from '@svg/phone.svg?react'
+import SVGMail from '@svg/mail.svg?react'
 import axios from 'axios'
 import { url } from 'inspector'
 
@@ -32,18 +34,24 @@ const Contacts = () => {
         <div className={styles.container1200}>
           <div className={styles.left_container}>
             <div className={styles.prop}>
-              <div className={styles.prop_svg}></div>
+              <div className={styles.prop_svg}>
+                <SVGMark width={26} />
+              </div>
               <p className={styles.prop_title}>Адрес</p>
               <p className={styles.prop_text}>40 лет Победы д.61</p>
             </div>
             <div className={styles.prop}>
-              <div className={styles.prop_svg}></div>
+              <div className={styles.prop_svg}>
+                <SVGPhone width={30} />
+              </div>
               <p className={styles.prop_title}>Телефон</p>
               <p className={styles.prop_text}>8-880-546-52-98</p>
               <p className={styles.prop_text}>+7-953-492-76-76</p>
             </div>
             <div className={styles.prop}>
-              <div className={styles.prop_svg}></div>
+              <div className={styles.prop_svg}>
+                <SVGMail width={30} />
+              </div>
               <p className={styles.prop_title}>Электронная почта</p>
               <p className={styles.prop_text}>efertiti07@mail.ru</p>
               <p className={styles.prop_text}>mst@promkip.ru</p>
@@ -57,7 +65,10 @@ const Contacts = () => {
             </p>
             <input type='text' ref={ref_fd_user_telegram} placeholder='Ваш Telegram для связи' className={styles.fd_telegram} />
             <div className={styles.buttons_container}>
-              <ActionButton text='Отправить' action={telegramSendClick} />
+              <button className={styles.btn_send_tg} onClick={telegramSendClick}>
+                Отправить
+              </button>
+              {/* <ActionButton text='Отправить' action={telegramSendClick} /> */}
             </div>
           </div>
         </div>

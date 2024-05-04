@@ -20,6 +20,8 @@ class StoreCart {
     cart: ICart = { items: [] }
     add(item: ICatalogPlant) { this.cart.items.push({...item, cartId: this.cart.items.length + 1}) }
     remove(cartId: number) { this.cart.items = this.cart.items.filter(item=>item.cartId !== cartId) }
+
+    clear() { this.cart.items = [] }
 }
 
 export default new StoreCart()

@@ -9,6 +9,7 @@ import { LinkButton } from '@components/LinkButton'
 import { observer } from 'mobx-react-lite'
 import storeCart, { ICartItem } from '@stores/storeCart'
 import ICatalogPlant from '@models/ICatalogPlant'
+import axios from 'axios'
 
 const PopupCart = () => {
   const navigate = useNavigate()
@@ -36,6 +37,28 @@ const PopupCart = () => {
     navigate('/payment')
   }
 
+  const checkoutOrderHandler = async () => {
+    const userdata = window.localStorage.getItem('userdata')
+    const json_userdata = JSON.parse(userdata)
+
+    const order = {
+      phone_number: json_userdata.phone_number,
+      delivery_point: json_userdata.delivery_address,
+      order_from_cart: JSON.stringify(storeCart.cart.items),
+      status: 'opened',
+    }
+
+    const response = await axios.post('http://localhost:3001/orders/create', { ...order })
+
+    if (response.data.status === 200) {
+      alert('Успешное оформление заказа')
+      closeClick()
+      storeCart.clear()
+    } else {
+      alert('Возникла ошибка, обратитесь в поддержку')
+    }
+  }
+
   return (
     <>
       <div className={styles.block}>
@@ -52,7 +75,7 @@ const PopupCart = () => {
                 <p className={styles.empty_cart_text}>Корзина пустая</p>
               ) : (
                 storeCart.cart.items.map((item: ICartItem) => (
-                  <div className={styles.cart_item_container}>
+                  <div className={styles.cart_item_container} key={item.cartId}>
                     <div className={styles.container_left}>
                       <img src={item.imagePubPath} alt='' className={styles.cart_item_image} />
                       <p className={styles.cart_item_name}>{item.name}</p>
@@ -72,9 +95,15 @@ const PopupCart = () => {
               <p className={styles.total_text}>Скидка: 10%</p>
               <p className={styles.total_text}>Итого со скидкой: {Math.round(totalCost - totalCost / 10)} ₽</p>
             </div>
-            <div className={styles.buttons_container}>
-              <ActionButton text='Перейти к оплате' action={payClick} />
-            </div>
+            {storeCart.cart.items.length > 0 ? (
+              <div className={styles.buttons_container}>
+                <button className={styles.btn_goto_pay} onClick={checkoutOrderHandler}>
+                  Оформить заказ
+                </button>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </div>

@@ -1,0 +1,150 @@
+.tint {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.4);
+    z-index: 1003;
+    position: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame {
+    width: 60vw;
+    height: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,.4));
+}
+
+.order_controls_container {
+    padding: 0 0 10px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn_close_popup {
+    border: none;
+    color: black;
+    background-color: transparent;
+    font-size: 22px;
+    font-weight: 500;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    line-height: 100%;
+}
+
+.order_params_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;;
+
+}
+
+.title {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+.order_param {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(120, 120, 120);
+    /* background-color: red; */
+}
+.order_param span {
+    color: black;
+}
+
+.order_items_container {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+
+    max-height: 40vh;
+    overflow-y: scroll;
+}
+
+.order_item {
+    display: flex;
+    gap: 30px;
+}
+
+.left {
+
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+p.item_param {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(120, 120, 120);
+}
+p.item_param span {
+    color: black;
+}
+
+img.item_image {
+    width: 140px;
+    border-radius: 8px;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,.2));
+}
+
+
+
+.order_payment_container {
+    /* background-color: #f1f1f1; */
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.total_cost {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+button.btn_pay {
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    padding: 14px 20px;
+    cursor: pointer;
+
+    border: none;
+    background-color: rgb(66, 101, 69);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all .2s ease;
+}
+button.btn_pay:hover {
+    transform: scale(1.05);
+}
