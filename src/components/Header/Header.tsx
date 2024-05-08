@@ -11,6 +11,7 @@ import { PopupCart } from '@components/PopupCart'
 // svg
 import SVGCart from '@svg/cart.svg?react'
 import SVGAccount from '@svg/account.svg?react'
+import SVGCall from '@svg/call.svg?react'
 // stores, mobx
 import { observer } from 'mobx-react-lite'
 import storeCart from '@stores/storeCart'
@@ -52,6 +53,15 @@ const Header = () => {
             <Point text='Главная' to='/' />
             <Point text='Каталог' to='/catalog' />
             <Point text='Контакты' to='/contacts' />
+          </div>
+          <div className={styles.phone_container}>
+            <div className={styles.phone_icon}>
+              <SVGCall />
+            </div>
+            <div className={styles.phone_text_head}>
+              <p className={styles.phone_numbers}>8-880-546-52-98</p>
+              <p className={styles.phone_clock}>Ежедневно с 9:00 до 20:00</p>
+            </div>
           </div>
           <div className={styles.buttons_container}>
             {isLogin && (

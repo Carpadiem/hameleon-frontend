@@ -108,3 +108,35 @@
     width: 20px;
 }
 
+
+.phone_container {
+    display: flex;
+    gap: 12px;
+}
+
+.phone_icon  {
+    display: inline-block;
+}
+.phone_icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.phone_text_head {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+p.phone_numbers {
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: 600;
+    color: black;
+}
+p.phone_clock {
+    font-family: 'Montserrat';
+    font-size: 10px;
+    font-weight: 400;
+    color: black;
+}
