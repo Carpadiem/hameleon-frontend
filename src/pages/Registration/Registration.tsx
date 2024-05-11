@@ -43,6 +43,7 @@ const Registration = () => {
     const response = await axios.post<{ status: string }>(url, data)
 
     // answer
+    //
     if (response.data.status === 'ok') {
       alert('Успешная регистрация')
       navigate('/')
