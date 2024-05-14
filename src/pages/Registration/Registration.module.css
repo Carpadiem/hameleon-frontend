@@ -60,3 +60,16 @@ h1.title {
     color: #2E363E;
 }
 .fd:focus {outline: none;}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .block {
+
+    }
+    .container1200 {
+        width: 320px;
+    }
+    .form {
+        width: 100%;
+    }
+}

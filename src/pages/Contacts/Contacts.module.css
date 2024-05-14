@@ -119,3 +119,37 @@ p.right_description {
     background-color: #426545;
     color: white;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .block {
+
+    }
+    .container1200 {
+        flex-direction: column;
+        gap: 40px;
+        width: 320px;
+    }
+    .left_container {
+        flex-direction: row;
+        justify-content: center;
+        
+        width: 100%;
+        transform: translateX(-10px);
+    }
+    p.prop_title {
+        text-align: center;
+        font-size: 14px;
+        max-width: 80px;
+    }
+    .prop_svg svg {
+        height: 20px;
+    }
+    p.prop_text {
+        text-align: center;
+        font-size: 10px;
+        width: 100%;
+    }
+    .right_container {
+
+    }
+}

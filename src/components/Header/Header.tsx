@@ -67,7 +67,7 @@ const Header = () => {
         <div
           className={styles.block_fixed}
           style={{
-            height: isMobileMenuOpen ? '65%' : '80px',
+            height: isMobileMenuOpen ? '460px' : '80px',
           }}
         >
           <div className={styles.container1200}>

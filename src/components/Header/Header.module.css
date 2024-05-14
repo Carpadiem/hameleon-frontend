@@ -163,7 +163,7 @@ p.phone_clock {
     width: 100%;
 }
 
-@media screen and (min-width: 320px) {
+@media (min-width: 320px) and (max-width: 480px) {
     .block_fixed {
         padding: 20px 0;
         width: 100%;

@@ -27,12 +27,21 @@ const Contacts = () => {
     }
   }
 
+  const [isMobile, setIsMobile] = React.useState(false)
+  React.useEffect(()=>{
+    if (window.innerWidth < 480 && window.innerWidth > 320) {
+      setIsMobile(true)
+    } 
+  }, [])
+
   return (
     <>
       <Header />
-      <div className={styles.block} style={{ height: 'auto', padding: '180px 0 120px 0' }}>
+      <div className={styles.block} style={{ height: 'auto', padding: isMobile ? '120px 0 40px 0' : '180px 0 120px 0' }}>
         <div className={styles.container1200}>
-          <div className={styles.left_container}>
+          <div className={styles.left_container} style={{
+            display: isMobile ? 'none' : 'flex'
+          } as React.CSSProperties}>
             <div className={styles.prop}>
               <div className={styles.prop_svg}>
                 <SVGMark width={26} />
@@ -71,9 +80,38 @@ const Contacts = () => {
               {/* <ActionButton text='Отправить' action={telegramSendClick} /> */}
             </div>
           </div>
+
+          <div className={styles.left_container} style={{
+            display: isMobile ? 'flex' : 'none'
+          } as React.CSSProperties}>
+            <div className={styles.prop}>
+              <div className={styles.prop_svg}>
+                <SVGMark width={26} />
+              </div>
+              <p className={styles.prop_title}>Адрес</p>
+              <p className={styles.prop_text}>40 лет Победы д.61</p>
+            </div>
+            <div className={styles.prop}>
+              <div className={styles.prop_svg}>
+                <SVGPhone width={30} />
+              </div>
+              <p className={styles.prop_title}>Телефон</p>
+              <p className={styles.prop_text}>8-880-546-52-98</p>
+              <p className={styles.prop_text}>+7-953-492-76-76</p>
+            </div>
+            <div className={styles.prop}>
+              <div className={styles.prop_svg}>
+                <SVGMail width={30} />
+              </div>
+              <p className={styles.prop_title}>Электронная почта</p>
+              <p className={styles.prop_text}>efertiti07@mail.ru</p>
+              <p className={styles.prop_text}>mst@promkip.ru</p>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div className={styles.block}>
+      <div className={styles.block} style={{ height: isMobile ? '300px' : 'auto' }}>
         <iframe
           src='https://yandex.ru/map-widget/v1/?um=constructor%3A0eb77700247307972410ab5844358d6d8b3181d3becfe6ab103f92ecfc111abf&amp;source=constructor'
           width='100%'

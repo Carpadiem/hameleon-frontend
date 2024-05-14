@@ -22,6 +22,13 @@ const Flower = () => {
   })
 
   const addToCartClick = () => {
+    // check if user logged in
+    const userdata = window.localStorage.getItem('userdata')
+    if (userdata === '' || userdata == null) {
+      alert('Войдите в аккаунт')
+      return
+    }
+    // add to cart
     storeCart.add(plantInfo)
   }
 

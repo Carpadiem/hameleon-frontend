@@ -36,7 +36,7 @@ img.slider_image {
     align-items: flex-start;
     gap: 20px;
     position: relative;
-    right: 180px;
+    right: 0px;
 }
 
 h1.welcome_title {
@@ -195,7 +195,7 @@ p.emp_working_position {
 
 
 
-@media screen and (min-width: 320px) {
+@media (min-width: 320px) and (max-width: 480px) {
     .container1200 {
         justify-content: center;
         width: 280px;

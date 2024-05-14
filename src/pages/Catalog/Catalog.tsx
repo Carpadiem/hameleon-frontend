@@ -16,6 +16,13 @@ const Catalog = () => {
   const [categoryBytab, setCategoryByTab] = React.useState('all')
 
   const addToCartClick = (plant: ICatalogPlant) => {
+    // check if user logged in
+    const userdata = window.localStorage.getItem('userdata')
+    if (userdata === '' || userdata == null) {
+      alert('Войдите в аккаунт')
+      return
+    }
+    // add to cart
     storeCart.add(plant)
   }
 
