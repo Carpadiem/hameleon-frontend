@@ -47,12 +47,17 @@ const Account = () => {
     // })
 
     // without db version
-    const userdata = JSON.parse(window.localStorage.getItem('userdata'))
+    const userdata = {
+      firstname: 'Dmitry',
+      lastname: 'Dmitry',
+      phone_number: '89963361386',
+      delivery_address: 'flower st., 20'
+    }
     setUserdata(userdata)
     // get orders from db
-    const response = axios.get(`http://localhost:3001/orders/${userdata.phone_number}`).then((res) => {
-      setMyOrders(res.data)
-    })
+    // const response = axios.get(`http://localhost:3001/orders/${userdata.phone_number}`).then((res) => {
+    //   setMyOrders(res.data)
+    // })
   }, [])
 
   const [isOpenPopupChangeAddress, setIsOpenPopupChangeAddress] = React.useState(false)
@@ -136,15 +141,13 @@ const Account = () => {
                 <div style={{ display: 'inline-block' }}>
                   Адрес доставки: <span>{userdata?.delivery_address}</span>
                 </div>
-                <button className={styles.btn_change_address} onClick={changeAddressClick}>
+                <button className={styles.btn_black} onClick={changeAddressClick}>
                   Изменить
                 </button>
               </p>
-              <p className={styles.profile_param}>
-                <button className={styles.btn_change_address} onClick={exitAccountClick}>
+              <button className={styles.btn_black} onClick={exitAccountClick}>
                   Выйти из аккаунта
                 </button>
-              </p>
             </div>
           )}
 
