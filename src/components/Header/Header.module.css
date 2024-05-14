@@ -7,6 +7,8 @@
     background-color: white;
     position: fixed;
 
+    transition: all .3s ease;
+
     z-index: 999;
 }
 
@@ -139,4 +141,70 @@ p.phone_clock {
     font-size: 10px;
     font-weight: 400;
     color: black;
+}
+
+.burger_container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.burger_line {
+    width: 24px;
+    height: 2px;
+    background-color: black;
+}
+
+.top_line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media screen and (min-width: 320px) {
+    .block_fixed {
+        padding: 20px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        filter: drop-shadow(0 10px 10px rgba(0,0,0,.1));
+        background-color: white;
+        /* position: fixed; */
+        transition: all .3s ease;
+        z-index: 999;
+    }
+    .container1200 {
+        width: 280px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .points_container {
+        position: relative;
+        padding: 50px 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        transition: all .2s ease;
+    }
+    .phone_container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        transition: all .2s ease;
+    }
+    .buttons_container {
+        position: relative;
+        padding: 40px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        transition: all .2s ease;
+    }
 }

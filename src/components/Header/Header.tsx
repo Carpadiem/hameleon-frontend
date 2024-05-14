@@ -41,51 +41,129 @@ const Header = () => {
     } catch {}
   })
 
+  const [isMobile, setIsMobile] = React.useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+
+  // first render
+  React.useEffect(() => {
+    if (window.innerWidth <= 480) {
+      setIsMobile(true)
+    }
+  }, [])
+
+  const burger_click = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const mobileMenuContainersStyle = {
+    bottom: isMobileMenuOpen ? '0' : '100px',
+    opacity: isMobileMenuOpen ? '1' : '0',
+    pointerEvents: isMobileMenuOpen ? 'auto' : 'none',
+  } as React.CSSProperties
+
   return (
     <>
-      <div className={styles.block_fixed}>
-        <div className={styles.container1200}>
-          <Link className={styles.logo_container} to='/'>
-            <img className={styles.logo_image} src={logo} alt='' />
-            <p className={styles.logo_text}>Хамелеон</p>
-          </Link>
-          <div className={styles.points_container}>
-            <Point text='Главная' to='/' />
-            <Point text='Каталог' to='/catalog' />
-            <Point text='Контакты' to='/contacts' />
-          </div>
-          <div className={styles.phone_container}>
-            <div className={styles.phone_icon}>
-              <SVGCall />
-            </div>
-            <div className={styles.phone_text_head}>
-              <p className={styles.phone_numbers}>8-880-546-52-98</p>
-              <p className={styles.phone_clock}>Ежедневно с 9:00 до 20:00</p>
-            </div>
-          </div>
-          <div className={styles.buttons_container}>
-            {isLogin && (
-              <div className={styles.btn_cart} onClick={cartIconClick}>
-                <SVGCart />
-                {cartItemsCount > 0 ? (
-                  <div className={styles.cart_items_count}>
-                    <p>{cartItemsCount}</p>
-                  </div>
-                ) : (
-                  <></>
-                )}
+      {isMobile ? (
+        <div
+          className={styles.block_fixed}
+          style={{
+            height: isMobileMenuOpen ? '65%' : '80px',
+          }}
+        >
+          <div className={styles.container1200}>
+            <div className={styles.top_line}>
+              <Link className={styles.logo_container} to='/'>
+                <img className={styles.logo_image} src={logo} alt='' />
+                <p className={styles.logo_text}>Хамелеон</p>
+              </Link>
+              <div className={styles.burger_container} onClick={burger_click}>
+                <div className={styles.burger_line} />
+                <div className={styles.burger_line} />
+                <div className={styles.burger_line} />
               </div>
-            )}
-            {isLogin ? (
-              <div className={styles.btn_account} onClick={accountIconClick}>
-                <SVGAccount />
+            </div>
+            <div className={styles.points_container} style={mobileMenuContainersStyle}>
+              <Point text='Главная' to='/' />
+              <Point text='Каталог' to='/catalog' />
+              <Point text='Контакты' to='/contacts' />
+            </div>
+            <div className={styles.phone_container} style={mobileMenuContainersStyle}>
+              <div className={styles.phone_icon}>
+                <SVGCall />
               </div>
-            ) : (
-              <LinkButton text='Войти' to='/login' bcolor='white' tcolor='black' border='1px solid #dfdfdf' radius={3} />
-            )}
+              <div className={styles.phone_text_head}>
+                <p className={styles.phone_numbers}>8-880-546-52-98</p>
+                <p className={styles.phone_clock}>Ежедневно с 9:00 до 20:00</p>
+              </div>
+            </div>
+            <div className={styles.buttons_container} style={mobileMenuContainersStyle}>
+              {isLogin && (
+                <div className={styles.btn_cart} onClick={cartIconClick}>
+                  <SVGCart />
+                  {cartItemsCount > 0 ? (
+                    <div className={styles.cart_items_count}>
+                      <p>{cartItemsCount}</p>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              )}
+              {isLogin ? (
+                <div className={styles.btn_account} onClick={accountIconClick}>
+                  <SVGAccount />
+                </div>
+              ) : (
+                <LinkButton text='Войти' to='/login' bcolor='white' tcolor='black' border='1px solid #dfdfdf' radius={3} />
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className={styles.block_fixed}>
+          <div className={styles.container1200}>
+            <Link className={styles.logo_container} to='/'>
+              <img className={styles.logo_image} src={logo} alt='' />
+              <p className={styles.logo_text}>Хамелеон</p>
+            </Link>
+            <div className={styles.points_container}>
+              <Point text='Главная' to='/' />
+              <Point text='Каталог' to='/catalog' />
+              <Point text='Контакты' to='/contacts' />
+            </div>
+            <div className={styles.phone_container}>
+              <div className={styles.phone_icon}>
+                <SVGCall />
+              </div>
+              <div className={styles.phone_text_head}>
+                <p className={styles.phone_numbers}>8-880-546-52-98</p>
+                <p className={styles.phone_clock}>Ежедневно с 9:00 до 20:00</p>
+              </div>
+            </div>
+            <div className={styles.buttons_container}>
+              {isLogin && (
+                <div className={styles.btn_cart} onClick={cartIconClick}>
+                  <SVGCart />
+                  {cartItemsCount > 0 ? (
+                    <div className={styles.cart_items_count}>
+                      <p>{cartItemsCount}</p>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              )}
+              {isLogin ? (
+                <div className={styles.btn_account} onClick={accountIconClick}>
+                  <SVGAccount />
+                </div>
+              ) : (
+                <LinkButton text='Войти' to='/login' bcolor='white' tcolor='black' border='1px solid #dfdfdf' radius={3} />
+              )}
+            </div>
+          </div>
+        </div>
+      )}
       {storeCart.isCartOpened && <PopupCart />}
     </>
   )

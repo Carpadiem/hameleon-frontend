@@ -82,7 +82,7 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.block} style={{ backgroundColor: '#9DA391', height: 'auto', padding: '120px 0' }}>
-        <div className={styles.container1200_3}>
+        <div className={styles.container1200_2}>
           <div className={styles.block_header_container}>
             <h1 className={styles.block_header_text} style={{ color: 'white' }}>
               Что вы получаете покупая товары у нас?
@@ -108,35 +108,35 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.block} style={{ backgroundColor: 'white', height: 'auto', padding: '120px 0' }}>
-        <div className={styles.container1200_4}>
+        <div className={styles.container1200_2}>
           <div className={styles.block_header_container}>
             <h1 className={styles.block_header_text} style={{ color: '#2E363E' }}>
               Наши флористы
             </h1>
-            <p className={styles.block_header_subtext} style={{ color: '#2E363E', marginTop: '30px', width: '80%' }}>
+            <p className={styles.block_header_subtext} style={{ color: '#2E363E', marginTop: '30px' }}>
               Идеальное сочетание творчества, энергии, общения, счастья и любви. Позвольте нам создать для вас улыбку.
             </p>
-            <div className={styles.employees_container}>
-              <div className={styles.employee_frame}>
-                <img src={PNGEmpAv1} alt='' className={styles.emp_avatar} />
-                <h2 className={styles.emp_name}>Дарья Новицкая</h2>
-                <p className={styles.emp_working_position}>Флорист</p>
-              </div>
-              <div className={styles.employee_frame}>
-                <img src={PNGEmpAv2} alt='' className={styles.emp_avatar} />
-                <h2 className={styles.emp_name}>Софья Никтаровна</h2>
-                <p className={styles.emp_working_position}>Менеджер</p>
-              </div>
-              <div className={styles.employee_frame}>
-                <img src={PNGEmpAv3} alt='' className={styles.emp_avatar} />
-                <h2 className={styles.emp_name}>Анжела Дружинина</h2>
-                <p className={styles.emp_working_position}>Флорист</p>
-              </div>
-              <div className={styles.employee_frame}>
-                <img src={PNGEmpAv4} alt='' className={styles.emp_avatar} />
-                <h2 className={styles.emp_name}>Аманда Водскинг</h2>
-                <p className={styles.emp_working_position}>Флорист</p>
-              </div>
+          </div>
+          <div className={styles.employees_container}>
+            <div className={styles.employee_frame}>
+              <img src={PNGEmpAv1} alt='' className={styles.emp_avatar} />
+              <h2 className={styles.emp_name}>Дарья Новицкая</h2>
+              <p className={styles.emp_working_position}>Флорист</p>
+            </div>
+            <div className={styles.employee_frame}>
+              <img src={PNGEmpAv2} alt='' className={styles.emp_avatar} />
+              <h2 className={styles.emp_name}>Софья Никтаровна</h2>
+              <p className={styles.emp_working_position}>Менеджер</p>
+            </div>
+            <div className={styles.employee_frame}>
+              <img src={PNGEmpAv3} alt='' className={styles.emp_avatar} />
+              <h2 className={styles.emp_name}>Анжела Дружинина</h2>
+              <p className={styles.emp_working_position}>Флорист</p>
+            </div>
+            <div className={styles.employee_frame}>
+              <img src={PNGEmpAv4} alt='' className={styles.emp_avatar} />
+              <h2 className={styles.emp_name}>Аманда Водскинг</h2>
+              <p className={styles.emp_working_position}>Флорист</p>
             </div>
           </div>
         </div>

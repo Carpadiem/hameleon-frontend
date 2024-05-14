@@ -19,9 +19,6 @@
     width: 100%;
 }
 
-.links_column {
-
-}
 h2.links_column_header {
     font-family: 'Montserrat';
     font-size: 24px;
@@ -54,4 +51,33 @@ a.links_column_link {
     font-weight: 600;
     color: white;
     text-align: center;
+}
+
+
+@media screen and (min-width: 320px) {
+    .container1200 {
+        width: 280px;
+    }
+    .links_container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 50px;
+        justify-content: flex-start;
+    }
+    h2.links_column_header {
+        font-size: 18px;
+    }
+    .links_column_links_container {
+        gap: 14px;
+    }
+    .links_column_link {
+        font-size: 14px;
+    }
+    .copyright_container {
+        margin-top: 40px;
+    }
+    h2.copyright_text {
+        font-size: 14px;
+        text-align: center;
+    }
 }
