@@ -215,9 +215,29 @@ h1.profile_title {
     .profile_container {
         margin-top: 100px;
     }
-    .profile_param {
+    h1.profile_title {
+        font-size: 16px;
+    }
+    p.profile_param {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;   
+        font-size: 14px;
+        border-radius: 4px;
+    }
+    .btn_black {
+        font-size: 12px;
+        padding: 12px 16px;
+    }
+
+    .pop_change_address {
+        width: 280px;
+        padding: 20px 0 0 0;
+    }
+    .fd_new_address {
+        font-size: 12px;
+    }
+    .pop_change_item {
+        flex-direction: column;
     }
 }

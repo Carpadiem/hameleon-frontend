@@ -37,27 +37,13 @@ const Account = () => {
   const [userdata, setUserdata] = React.useState(null!)
   const [myOrders, setMyOrders] = React.useState<IOrder[]>([])
   React.useEffect(() => {
-    
     // source code version
-    // const userdata = JSON.parse(window.localStorage.getItem('userdata'))
-    // setUserdata(userdata)
-    // // get orders from db
-    // const response = axios.get(`http://localhost:3001/orders/${userdata.phone_number}`).then((res) => {
-    //   setMyOrders(res.data)
-    // })
-
-    // without db version
-    const userdata = {
-      firstname: 'Dmitry',
-      lastname: 'Dmitry',
-      phone_number: '89963361386',
-      delivery_address: 'flower st., 20'
-    }
+    const userdata = JSON.parse(window.localStorage.getItem('userdata'))
     setUserdata(userdata)
     // get orders from db
-    // const response = axios.get(`http://localhost:3001/orders/${userdata.phone_number}`).then((res) => {
-    //   setMyOrders(res.data)
-    // })
+    const response = axios.get(`http://localhost:3001/orders/${userdata.phone_number}`).then((res) => {
+      setMyOrders(res.data)
+    })
   }, [])
 
   const [isOpenPopupChangeAddress, setIsOpenPopupChangeAddress] = React.useState(false)
@@ -146,8 +132,8 @@ const Account = () => {
                 </button>
               </p>
               <button className={styles.btn_black} onClick={exitAccountClick}>
-                  Выйти из аккаунта
-                </button>
+                Выйти из аккаунта
+              </button>
             </div>
           )}
 

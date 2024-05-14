@@ -11,7 +11,7 @@
 }
 
 .frame {
-    width: 60vw;
+    width: 80vw;
     height: auto;
     padding: 20px;
     background-color: white;
@@ -52,6 +52,7 @@
     font-size: 20px;
     font-weight: 500;
     color: black;
+    margin-top: 30px;
 }
 
 .order_param {
@@ -147,4 +148,53 @@ button.btn_pay {
 }
 button.btn_pay:hover {
     transform: scale(1.05);
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .tint {
+        width: 100%;
+    }
+    .frame {
+        width: 280px;
+    }
+    .order_params_container {
+        border-radius: 6px;
+        gap: 5px;
+        padding: 15px;
+    }
+    .order_param {
+        font-size: 12px;
+    }
+    .order_items_container {
+        gap: 80px;
+        justify-content: flex-start;
+    }
+    h1.title {
+        font-size: 16px;
+    }
+    .order_item {
+        flex-direction: column;
+    }
+    .left {
+
+    }
+    .right {
+
+    }
+    img.item_image {
+        width: 100%;
+    }
+
+    .order_payment_container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    p.total_cost {
+        font-size: 14px;
+        text-align: center;
+    }
+    .btn_pay {
+        width: 100%;
+    }
 }

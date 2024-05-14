@@ -41,8 +41,8 @@ const OrderPopup = ({ order }: OrderPopupProps) => {
             Статус заказа: <span>{order.status === 'opened' ? 'Ожидает оплаты' : 'Закрыт'}</span>
           </div>
         </div>
+        <h1 className={styles.title}>Товары в заказе:</h1>
         <div className={styles.order_items_container}>
-          <h1 className={styles.title}>Товары в заказе:</h1>
           {order.order_from_cart.map((item, index) => (
             <div className={styles.order_item} key={index}>
               <div className={styles.left}>

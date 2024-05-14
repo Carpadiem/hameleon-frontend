@@ -23,6 +23,7 @@
     height: auto;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
+    transition: all .2s ease;
 }
 
 
@@ -153,4 +154,35 @@ p.cart_item_price {
     font-weight: 500;
 
     transition: all .2s ease;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .container1200 {
+        width: 280px;
+    }
+    .title_container {
+        align-items: center;
+    }
+    h2.title {
+        font-size: 14px;
+    }
+    .btn_close {
+        font-size: 16px;
+    }
+    .cart_item_image {
+        width: 60px;
+    }
+    .cart_item_name {
+        font-size: 12px;
+    }
+    p.cart_item_price {
+        font-size: 12px;
+        width: 40px;
+    }
+    p.total_text {
+        font-size: 14px;
+    }
+    .btn_goto_pay {
+        font-size: 12px;
+    }
 }
