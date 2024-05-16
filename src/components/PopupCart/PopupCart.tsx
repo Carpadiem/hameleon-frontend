@@ -48,7 +48,7 @@ const PopupCart = () => {
       status: 'opened',
     }
 
-    const response = await axios.post('http://185.198.152.102:3001/orders/create', { ...order })
+    const response = await axios.post('http://185.198.152.102/backapi/orders/create', { ...order })
 
     if (response.data.status === 200) {
       alert('Успешное оформление заказа')

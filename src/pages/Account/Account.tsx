@@ -41,7 +41,7 @@ const Account = () => {
     const userdata = JSON.parse(window.localStorage.getItem('userdata'))
     setUserdata(userdata)
     // get orders from db
-    const response = axios.get(`http://185.198.152.102:3001/orders/${userdata.phone_number}`).then((res) => {
+    const response = axios.get(`http://185.198.152.102/backapi/orders/${userdata.phone_number}`).then((res) => {
       setMyOrders(res.data)
     })
   }, [])
@@ -52,7 +52,7 @@ const Account = () => {
   }
 
   const applyNewAddressClick = async () => {
-    const url = `http://185.198.152.102:3001/users/address`
+    const url = `http://185.198.152.102/backapi/users/address`
     const data = {
       phone_number: userdata?.phone_number,
       address: ref_fd_new_address.current.value,

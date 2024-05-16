@@ -62,6 +62,7 @@
     align-items: center;
     cursor: pointer;
     transition: transform .15s ease;
+    position: relative;
 }
 .btn_cart:hover {
     transform: scale(1.07);

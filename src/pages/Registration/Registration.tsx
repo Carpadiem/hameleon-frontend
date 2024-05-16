@@ -33,7 +33,7 @@ const Registration = () => {
     }
 
     // build & make request
-    const url = `http://185.198.152.102:3001/users/registration`
+    const url = `http://185.198.152.102/backapi/users/registration`
     const data = {
       phone_number: phone_number,
       firstname: firstname,
