@@ -22,7 +22,7 @@ const Login = () => {
       alert('Не все поля заполнены')
     }
 
-    const url = `http://localhost:3001/users/login`
+    const url = `http://185.198.152.102:3001/users/login`
     const data = {
       phone_number: phone_number,
       password: password,
