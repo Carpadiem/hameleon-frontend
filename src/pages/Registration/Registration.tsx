@@ -5,11 +5,18 @@ import { useNavigate } from 'react-router-dom'
 import { Header } from '@components/Header'
 import { ActionButton } from '@components/ActionButton'
 import { LinkButton } from '@components/LinkButton'
-// sxios
+// axios
 import axios from 'axios'
+
+import CryptoJS from 'crypto-js'
 
 const Registration = () => {
   const navigate = useNavigate()
+
+  const [check, setCheck] = React.useState(false)
+  const check_change_handle = () => {
+    setCheck((prev) => !prev)
+  }
 
   const ref_fd_number = React.useRef<HTMLInputElement>(null!)
   const ref_fd_firstname = React.useRef<HTMLInputElement>(null!)
@@ -27,18 +34,24 @@ const Registration = () => {
     // validation
     if (phone_number === '' || firstname === '' || lastname === '' || password === '' || repeat_password === '') {
       alert('Не все поля заполнены')
-    }
-    if (password !== repeat_password) {
+      return
+    } else if (password !== repeat_password) {
       alert('Пароли не совпадают')
+      return
+    } else if (!check) {
+      alert('Регистрация не может быть пройдена без вашего согласия на обработку персональных данных')
+      return
     }
 
     // build & make request
     const url = `http://185.198.152.102/backapi/users/registration`
+
+    const password_hash = CryptoJS.MD5(password)
     const data = {
       phone_number: phone_number,
       firstname: firstname,
       lastname: lastname,
-      password: password,
+      password: password_hash,
     }
     const response = await axios.post<{ status: string }>(url, data)
 
@@ -67,6 +80,11 @@ const Registration = () => {
               <input required type='text' ref={ref_fd_lastname} placeholder='Фамилия' className={styles.fd} />
               <input required type='password' ref={ref_fd_password} placeholder='Придумайте пароль' className={styles.fd} />
               <input required type='password' ref={ref_fd_repeat_password} placeholder='Повторите пароль' className={styles.fd} />
+              <form className={styles.form_policy}>
+                <label className={styles.policy}>
+                  <input type='checkbox' onChange={check_change_handle} /> Я согласен на обработку персональных данных
+                </label>
+              </form>
               <ActionButton text='Зарегистрироваться' height={45} action={registrationClick} />
               <LinkButton text='Уже есть аккаунт? Войти' height={45} bcolor='transparent' tcolor='rgb(48, 108, 237)' to='/login' />
             </div>
